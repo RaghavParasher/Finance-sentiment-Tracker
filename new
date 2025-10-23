@@ -1,0 +1,22 @@
+// Import the 'http' module, which is built-in to Node.js
+const http = require('http');
+
+// Define the hostname and port for the server
+const hostname = '127.0.0.1'; // localhost
+const port = 3000;
+
+// Create an HTTP server
+const server = http.createServer((req, res) => {
+  // Set the HTTP header for successful response
+  res.statusCode = 200; // OK
+  res.setHeader('Content-Type', 'text/plain'); // Indicate plain text response
+
+  // Send the response body
+  res.end('Hello from Node.js Server!\n');
+});
+
+// Start the server and listen for incoming requests
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+  console.log('You can open this URL in your web browser.');
+});
